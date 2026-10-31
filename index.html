@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dr. Rasheed Junaid</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Dr. Mohammed Abdul Rasheed Junaid — Urdu journalist, Joint Editor of Gawah Weekly, Hyderabad. Archive of 360 columns on the Gulf, the Islamic world and South Asia.">
+<meta name="description" content="Dr. Mohammed Abdul Rasheed Junaid — Urdu journalist, Joint Editor of Gawah Weekly, Hyderabad. Archive of 1,000+ columns on the Gulf, the Islamic world and South Asia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap">
@@ -146,7 +146,7 @@ footer{border-top:1px solid var(--rule);padding-block:32px 48px;display:flex;jus
       <h1><span class="dr">Dr.</span> Mohammed Abdul Rasheed Junaid</h1>
       <p class="role">Urdu journalist and <b>Joint Editor of Gawah Weekly</b>, writing on the Arab world, the Gulf, and South Asia for more than two decades.</p>
       <div class="facts">
-        <span>PhD in Urdu, MANUU</span><span>Moulvi Alim, Jamia Nizamia</span><span>20+ years in media</span><span>360 published columns</span>
+        <span>PhD in Urdu, MANUU</span><span>Moulvi Alim, Jamia Nizamia</span><span>Writing since 1995</span><span>1,000+ published columns</span>
       </div>
     </div>
     <figure class="portrait">
@@ -204,7 +204,7 @@ footer{border-top:1px solid var(--rule);padding-block:32px 48px;display:flex;jus
     <div class="sec-head"><span class="eyebrow">Columns · کالم</span><h2>Archive of published columns</h2></div>
     <div class="stats" id="stats"></div>
     <div class="years" id="years" role="group" aria-label="Filter by year"></div>
-    <p class="hint">Select a year to filter. Each column opens in full on HamariWeb.</p>
+    <p class="hint">The archive below lists the columns available online since 2015. Select a year to filter; each column opens in full on HamariWeb.</p>
     <div class="controls">
       <div class="search"><label for="q" class="eyebrow" style="position:absolute;left:-9999px">Search titles</label>
         <input id="q" type="search" placeholder="عنوان تلاش کریں… (مثلاً: فلسطین، سعودی عرب، عمران خان)" autocomplete="off"></div>
@@ -233,10 +233,10 @@ const $=s=>document.querySelector(s);
 const words=items.reduce((s,i)=>s+(i.w>50?i.w:0),0);
 const yrs=[...new Set(items.map(i=>i.y))].sort();
 $("#stats").innerHTML=[
-  [items.length,"columns published"],
-  [yrs[0]+"–"+yrs[yrs.length-1],"years of writing"],
-  [Math.round(words/1000)+"k","words in Urdu"],
-  [Object.keys(CATS).filter(k=>items.some(i=>i.c===k)).length,"subject areas"]
+  ["1,000+","columns published"],
+  ["1995–present","years of writing"],
+  ["1M+","words in Urdu"],
+  ["10+","subject areas"]
 ].map(([n,l])=>`<div class="stat"><div class="n">${n}</div><div class="l">${l}</div></div>`).join("");
 
 // year bars
