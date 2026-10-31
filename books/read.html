@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anwaar-e-Deen · Read online</title>
+<meta name="description" content="Read Anwaar-e-Deen by Dr. Mohammed Abdul Rasheed Junaid online, in Urdu, Roman Urdu and English.">
+<link rel="icon" type="image/svg+xml" href="../logo.svg">
+<meta name="theme-color" content="#08352c">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,600;7..72,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&family=Noto+Nastaliq+Urdu:wght@500&display=swap">
+<style>
+:root{--bg-a:#06261f;--bg-b:#0b4f40;--fg:#f4faf7;--muted:#b3d3c8;--gold:#f2c75c;--line:rgba(255,255,255,.16);
+  --f-d:"Literata",Georgia,serif;--f-b:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--f-m:"IBM Plex Mono",ui-monospace,monospace;--f-u:"Noto Nastaliq Urdu",serif;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:radial-gradient(circle at 50% 40%,var(--bg-b),var(--bg-a) 70%);color:var(--fg);font:15px/1.5 var(--f-b);display:flex;flex-direction:column;overflow:hidden;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line);background:rgba(0,0,0,.18)}
+.back{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:500;color:var(--muted)}
+.back:hover{color:var(--fg)}
+.back img{width:30px;height:30px}
+.title{display:flex;flex-direction:column;line-height:1.15;margin-right:auto;min-width:0}
+.title b{font:700 18px var(--f-d)}
+.title small{font:500 11px var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.ed{display:flex;gap:4px;background:rgba(255,255,255,.08);padding:4px;border-radius:999px}
+.ed a{padding:6px 12px;border-radius:999px;text-decoration:none;font-size:13.5px;color:var(--muted);white-space:nowrap}
+.ed a[aria-current="page"]{background:var(--gold);color:#1c1606;font-weight:600}
+.ed a .u{font-family:var(--f-u);font-size:13px;line-height:1}
+.dl{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-weight:600;font-size:14px;white-space:nowrap}
+.dl:hover{background:var(--gold);color:#1c1606}
+.dl svg{width:16px;height:16px}
+.stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:18px max(16px,env(safe-area-inset-left,0px));position:relative}
+#book{box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.page{background:#fff;overflow:hidden}
+.page img{width:100%;height:100%;object-fit:contain;display:block;background:#fff}
+.ctl{display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 16px 14px}
+.ctl button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.08);color:var(--fg);font-size:24px;line-height:1;cursor:pointer;display:grid;place-items:center}
+.ctl button:hover:not(:disabled){background:rgba(255,255,255,.18)}
+.ctl button:disabled{opacity:.35;cursor:default}
+.ctr{font:500 13px var(--f-m);color:var(--muted);min-width:150px;text-align:center}
+.hint{position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:12.5px;color:var(--muted);opacity:.8}
+.loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted)}
+@media (max-width:720px){.ed{order:3;width:100%;justify-content:center}.title b{font-size:16px}.dl span{display:none}.dl{padding:8px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="back" href="../#works" aria-label="Back to website"><img src="../logo.svg" alt="">&#8592;</a>
+  <div class="title"><b>Anwaar-e-Deen</b><small id="edName">Urdu edition</small></div>
+  <nav class="ed" aria-label="Choose edition">
+    <a href="?b=ur" data-b="ur"><span class="u" lang="ur">اردو</span></a>
+    <a href="?b=ro" data-b="ro">Roman Urdu</a>
+    <a href="?b=en" data-b="en">English</a>
+  </nav>
+  <a class="dl" id="dl" href="#" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span>Download PDF</span></a>
+</header>
+<main class="stage" id="stage">
+  <div class="loading" id="loading">Opening the book…</div>
+  <div id="book"></div>
+  <div class="hint" id="hint"></div>
+</main>
+<div class="ctl">
+  <button id="prev" type="button" aria-label="Previous page">&#8249;</button>
+  <span class="ctr" id="ctr"></span>
+  <button id="next" type="button" aria-label="Next page">&#8250;</button>
+</div>
+<script src="vendor/page-flip.browser.js"></script>
+<script>
+const BOOKS={
+  ur:{name:"Urdu edition",dir:"ur",pdf:"Anwar-e-Deen-Urdu.pdf",rtl:true,pages:58},
+  ro:{name:"Roman Urdu edition",dir:"ro",pdf:"Anwaar-e-Deen-Roman-Urdu.pdf",rtl:false,pages:58},
+  en:{name:"English edition",dir:"en",pdf:"Anwar-e-Deen-English.pdf",rtl:false,pages:58}};
+const key=(new URLSearchParams(location.search).get("b")||"ur");const B=BOOKS[key]||BOOKS.ur;
+document.title="Anwaar-e-Deen · "+B.name;
+document.getElementById("edName").textContent=B.name;
+document.querySelectorAll(".ed a").forEach(a=>{if(a.dataset.b===(BOOKS[key]?key:"ur"))a.setAttribute("aria-current","page")});
+const dl=document.getElementById("dl");dl.href=B.pdf;dl.setAttribute("download",B.pdf);
+const pad=n=>String(n).padStart(2,"0");
+// physical order; RTL books are mirrored so the first page sits on the right and pages turn leftwards
+let order=[...Array(B.pages)].map((_,i)=>i+1);if(B.rtl)order.reverse();
+const book=document.getElementById("book");
+order.forEach(n=>{const d=document.createElement("div");d.className="page";if(n===1||n===B.pages)d.dataset.density="hard";
+  const im=document.createElement("img");im.alt="Page "+n;im.dataset.src=B.dir+"/p-"+pad(n)+".jpg";im.decoding="async";d.appendChild(im);book.appendChild(d)});
+const pageEls=[...book.children];
+function loadNear(i){for(let k=i-4;k<=i+5;k++){const el=pageEls[k];if(!el)continue;const im=el.firstChild;if(!im.src&&im.dataset.src)im.src=im.dataset.src}}
+function size(){const st=document.getElementById("stage");const h=st.clientHeight-30,w=st.clientWidth-20;const ratio=1157/819;
+  const portrait=w<720;let pw=portrait?Math.min(w,h/ratio):Math.min(w/2,h/ratio);pw=Math.max(200,Math.floor(pw));return {w:pw,h:Math.floor(pw*ratio),portrait}}
+const s=size();
+const pf=new St.PageFlip(book,{width:s.w,height:s.h,size:"fixed",showCover:true,usePortrait:true,maxShadowOpacity:.45,mobileScrollSupport:false,flippingTime:700,useMouseEvents:!B.rtl,startPage:B.rtl?B.pages-1:0});
+loadNear(B.rtl?B.pages-1:0);
+pf.loadFromHTML(pageEls);
+document.getElementById("loading").remove();
+if(B.rtl){book.style.transform="none"}
+const ctr=document.getElementById("ctr"),prev=document.getElementById("prev"),next=document.getElementById("next");
+// for RTL: "next" in reading order = flipPrev in physical order
+const fwd=()=>B.rtl?pf.flipPrev():pf.flipNext(), back=()=>B.rtl?pf.flipNext():pf.flipPrev();
+function update(){const i=pf.getCurrentPageIndex(),n=pf.getPageCount();loadNear(i);
+  const vis=[i];if(pf.getOrientation()==="landscape"&&i>0&&i<n-1)vis.push(i+1);
+  const nums=vis.map(k=>order[k]).sort((a,b)=>a-b);ctr.textContent=(nums.length>1?"Pages "+nums[0]+"–"+nums[1]:"Page "+nums[0])+" of "+n;
+  // visual buttons: in RTL, the left arrow moves forward
+  if(B.rtl){prev.disabled=i===0;next.disabled=i>=n-1}else{prev.disabled=i===0;next.disabled=i>=n-1}}
+pf.on("flip",update);pf.on("changeOrientation",update);update();
+// arrows act visually: left arrow turns the page that is on the left
+prev.addEventListener("click",()=>pf.flipPrev());next.addEventListener("click",()=>pf.flipNext());
+prev.setAttribute("aria-label",B.rtl?"Next page":"Previous page");next.setAttribute("aria-label",B.rtl?"Previous page":"Next page");
+document.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")pf.flipPrev();if(e.key==="ArrowRight")pf.flipNext()});
+// RTL: custom tap zones and swipe (library mouse events are disabled)
+if(B.rtl){const st=document.getElementById("stage");let sx=null;
+  book.addEventListener("click",e=>{const r=book.getBoundingClientRect();(e.clientX<r.left+r.width/2)?pf.flipPrev():pf.flipNext()});
+  st.addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:true});
+  st.addEventListener("touchend",e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){dx>0?pf.flipPrev():pf.flipNext()}sx=null},{passive:true})}
+document.getElementById("hint").textContent=B.rtl?"اردو کتاب دائیں سے بائیں پڑھی جاتی ہے · Tap the left page or swipe right to turn forward":"Click or drag a page corner to turn · use ← → keys";
+let rt,lw=innerWidth;addEventListener("resize",()=>{if(Math.abs(innerWidth-lw)<40)return;clearTimeout(rt);rt=setTimeout(()=>location.reload(),400)});
+</script>
+</body>
+</html>
