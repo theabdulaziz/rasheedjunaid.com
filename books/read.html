@@ -40,7 +40,7 @@ a{color:inherit}
 .ctl button:hover:not(:disabled){background:rgba(255,255,255,.18)}
 .ctl button:disabled{opacity:.35;cursor:default}
 .ctr{font:500 13px var(--f-m);color:var(--muted);min-width:150px;text-align:center}
-.hint{position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:12.5px;color:var(--muted);opacity:.8}
+.hint{position:absolute;bottom:2px;left:16px;right:16px;text-align:center;line-height:1.3;font-size:12.5px;color:var(--muted);opacity:.8}
 .loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted)}
 @media (max-width:720px){.ed{order:3;width:100%;justify-content:center}.title b{font-size:16px}.dl span{display:none}.dl{padding:8px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -112,7 +112,7 @@ if(B.rtl){const st=document.getElementById("stage");let sx=null;
   book.addEventListener("click",e=>{const r=book.getBoundingClientRect();(e.clientX<r.left+r.width/2)?pf.flipPrev():pf.flipNext()});
   st.addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:true});
   st.addEventListener("touchend",e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){dx>0?pf.flipPrev():pf.flipNext()}sx=null},{passive:true})}
-document.getElementById("hint").textContent=B.rtl?"اردو کتاب دائیں سے بائیں پڑھی جاتی ہے · Tap the left page or swipe right to turn forward":"Click or drag a page corner to turn · use ← → keys";
+document.getElementById("hint").textContent=B.rtl?"Reads right to left · tap the left page or swipe right to turn":(innerWidth<720?"Tap or swipe to turn the page":"Click or drag a page corner to turn · ← → keys");
 let rt,lw=innerWidth;addEventListener("resize",()=>{if(Math.abs(innerWidth-lw)<40)return;clearTimeout(rt);rt=setTimeout(()=>location.reload(),400)});
 </script>
 </body>
