@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://rasheedjunaid.com/columns/img/2026-11-27-lead.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,600;7..72,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap">
-<script>try{var s=localStorage.getItem("theme");if(s==="dark"||s==="light")document.documentElement.setAttribute("data-theme",s);var f=localStorage.getItem("fs");if(f)document.documentElement.style.setProperty("--fs",f+"px")}catch(e){}</script>
+<script>try{var s=localStorage.getItem("theme");if(s==="dark"||s==="light")document.documentElement.setAttribute("data-theme",s);}catch(e){}</script>
 <style>
 :root{--paper:#f3f5f2;--sheet:#fff;--ink:#15211d;--muted:#5b6a64;--rule:#d5ddd8;--accent:#0d6b57;--accent-soft:#dcebe5;--gold:#9a7417;--hero-a:#08352c;--hero-c:#17907a;--gold-lit:#f2c75c;
   --f-d:"Literata",Georgia,serif;--f-b:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--f-m:"IBM Plex Mono",ui-monospace,monospace;--f-u:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq","Urdu Typesetting",serif;--fs:21px}
@@ -56,6 +56,19 @@ figcaption{font-size:13px;color:var(--muted);margin-top:6px;direction:ltr;text-a
 .sh svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .sh.wa{background:#1fa855;border-color:#1fa855;color:#fff}
 .sh.native{background:var(--accent);border-color:var(--accent);color:#fff}
+.listen{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:18px;padding:12px 14px;border:1px solid var(--rule);border-radius:14px;background:var(--sheet)}
+.lb{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:999px;padding:10px 18px 10px 12px;background:linear-gradient(135deg,var(--hero-a),var(--hero-c));color:#fff;font:600 15px var(--f-b);cursor:pointer}
+.lb svg{width:26px;height:26px;padding:5px;border-radius:50%;background:var(--gold-lit);color:#1c1606}
+.lb2{width:40px;height:40px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);cursor:pointer;display:grid;place-items:center}
+.lb2 svg{width:16px;height:16px}
+.spd{font:500 13px var(--f-b);color:var(--muted);display:inline-flex;align-items:center;gap:6px}
+.spd select{font:500 13px var(--f-b);border:1px solid var(--rule);border-radius:8px;padding:4px 6px;background:var(--paper);color:var(--ink)}
+.lstat{font:12px var(--f-m);color:var(--muted);flex:1 1 160px}
+.lbar{flex:1 0 100%;height:4px;border-radius:2px;background:var(--rule);overflow:hidden}
+.lbar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+.reading{background:var(--accent-soft);border-radius:8px;box-shadow:0 0 0 6px var(--accent-soft)}
+h1.reading{box-shadow:0 0 0 8px var(--accent-soft)}
+.lnote{flex:1 0 100%;font-size:13px;color:var(--muted);margin:0}
 .links{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:14px}
 @media (max-width:560px){:root{--fs:19px}.body{text-align:right;line-height:2.25}.brand small{display:none}.sh span{display:none}.sh{padding:10px}.sh.wa span,.sh.native span{display:inline}}
 </style>
@@ -63,14 +76,19 @@ figcaption{font-size:13px;color:var(--muted);margin-top:6px;direction:ltr;text-a
 <body>
 <header class="top">
   <a class="brand" href="../#archive"><img src="../logo.svg" alt=""><span><b>Dr. Mohammed Abdul Rasheed Junaid</b><small>← All columns</small></span></a>
-  <button class="tb" id="fsm" type="button" aria-label="Smaller text">A−</button>
-  <button class="tb" id="fsp" type="button" aria-label="Larger text">A+</button>
   <button class="tb" id="theme" type="button" aria-label="Switch theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
 </header>
 <article>
   <div class="kicker"><span class="col">عالمِ اسلام راؤنڈ اَپ</span><span class="pub">GAWAH WEEKLY · 27 NOV – 3 DEC 2026 · PAGE 3</span></div>
   <h1>پاکستان میں اندرونی حالات سنگین صورتحال کی جانب رواں دواں۰۰۰ ادارے اپنا اعتماد کھو بیٹھے ہیں: بلاول بھٹو</h1>
   <div class="by"><span class="name">ڈاکٹر محمد عبدالرشید جنید</span><span class="meta">11 min read</span></div>
+  <div class="listen" id="listen" dir="ltr">
+    <button class="lb" id="lPlay" type="button" aria-label="Listen to this column"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" stroke="none"/></svg><span id="lLbl">Listen to this column</span></button>
+    <button class="lb2" id="lStop" type="button" aria-label="Stop reading" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="1.5" fill="currentColor" stroke="none"/></svg></button>
+    <label class="spd">Speed <select id="lRate"><option value="0.85">0.85×</option><option value="1" selected>1×</option><option value="1.15">1.15×</option><option value="1.3">1.3×</option></select></label>
+    <span class="lstat" id="lStat"></span>
+    <div class="lbar"><i id="lProg"></i></div>
+  </div>
   <figure><img src="img/2026-11-27-lead.jpg" alt="Bilawal Bhutto Zardari at a press programme in Karachi" width="1167" height="626"><figcaption>Bilawal Bhutto Zardari addressing the press in Karachi</figcaption></figure>
   <div class="body">
 <p>پاکستان کے حالات انتہائی کشیدگی کی طرف رواں دواں دکھائی دے رہے ہیں۔ شہباز شریف کی حکمراں جماعت اور اسکی حلیف جماعتوں کے درمیان آئے دن اختلافات میں اضافہ دیکھا جارہا ہے۔ مولانا فضل الرحمٰن اور بلاول بھٹو کے ساتھ بھی شہباز شریف حکومت کے وزراء کے درمیان اختلافات نمایاں ہوتے جارہے ہیں۔ پاکستان کی سب سے اہم اور اپوزیشن پارٹی پاکستان تحریک انصاف (پی ٹی آئی) کو نقصان پہنچانے والے خوداب پریشان کن صورتحال سے دوچار دکھائی دے رہے ہیں۔</p>
@@ -123,11 +141,34 @@ figcaption{font-size:13px;color:var(--muted);margin-top:6px;direction:ltr;text-a
 <script>
 (function(){const r=document.documentElement;
   document.getElementById("theme").onclick=()=>{const d=r.getAttribute("data-theme")==="dark"||(!r.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme: dark)").matches);const n=d?"light":"dark";r.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}};
-  const cur=()=>parseFloat(getComputedStyle(r).getPropertyValue("--fs"))||21;
-  const set=v=>{v=Math.max(15,Math.min(30,v));r.style.setProperty("--fs",v+"px");try{localStorage.setItem("fs",v)}catch(e){}};
-  document.getElementById("fsm").onclick=()=>set(cur()-2);document.getElementById("fsp").onclick=()=>set(cur()+2);
   document.querySelectorAll(".share").forEach(b=>{const url=b.dataset.url,text=b.dataset.text;const nb=b.querySelector(".native");if(navigator.share){nb.hidden=false;nb.onclick=()=>navigator.share({title:text,url}).catch(()=>{})}
     const cb=b.querySelector(".copy"),l=cb.querySelector("span");cb.onclick=()=>{try{navigator.clipboard.writeText(url).then(()=>{l.textContent="Copied";setTimeout(()=>l.textContent="Copy link",1800)},()=>{l.textContent=url})}catch(e){l.textContent=url}}});
+})();
+
+(function(){const S=window.speechSynthesis,btn=document.getElementById("lPlay"),lbl=document.getElementById("lLbl"),stop=document.getElementById("lStop"),stat=document.getElementById("lStat"),prog=document.getElementById("lProg"),rateSel=document.getElementById("lRate"),box=document.getElementById("listen");
+  const note=m=>{let n=box.querySelector(".lnote");if(!n){n=document.createElement("p");n.className="lnote";box.appendChild(n)}n.textContent=m};
+  if(!S||!window.SpeechSynthesisUtterance){btn.disabled=true;note("Audio reading isn’t supported in this browser.");return}
+  const h1=document.querySelector("h1"),col=document.querySelector(".kicker .col"),by=document.querySelector(".by .name");
+  const blocks=[...document.querySelectorAll(".body p,.body h2")];
+  const clean=s=>s.replace(/۰۰۰/g,"، ").replace(/[‘’“”"]/g,"").replace(/\s+/g," ").trim();
+  // queue: [element, text]
+  const Q=[[h1,clean(col.textContent)+"۔ "+clean(h1.textContent)+"۔"],[by,"تحریر: "+clean(by.textContent)+"۔"]];
+  blocks.forEach(b=>{const tx=clean(b.textContent);if(b.tagName==="H2")Q.push([b,tx+"۔"]);else tx.split(/(?<=[۔؟!])\s+/).reduce((acc,s)=>{if(acc.length&&acc[acc.length-1].length+s.length<220)acc[acc.length-1]+=" "+s;else acc.push(s);return acc},[]).forEach(c=>Q.push([b,c]))});
+  let voice=null,i=0,state="idle";
+  function pick(){const v=S.getVoices();voice=v.find(x=>/^ur(-|_|$)/i.test(x.lang)&&/natural|online|google/i.test(x.name))||v.find(x=>/^ur(-|_|$)/i.test(x.lang))||null}
+  pick();S.onvoiceschanged=pick;
+  function mark(el){document.querySelectorAll(".reading").forEach(e=>e.classList.remove("reading"));if(el){el.classList.add("reading");const r=el.getBoundingClientRect();if(r.top<80||r.bottom>innerHeight-40)el.scrollIntoView({behavior:"smooth",block:"center"})}}
+  function ui(){lbl.textContent=state==="playing"?"Pause":state==="paused"?"Resume":"Listen to this column";btn.firstElementChild.innerHTML=state==="playing"?'<rect x="7" y="6" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="13.5" y="6" width="3.5" height="12" rx="1" fill="currentColor"/>':'<path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/>';stop.hidden=state==="idle";prog.style.width=(i/Q.length*100)+"%";stat.textContent=state==="idle"?"":(voice?voice.name.replace(/Microsoft |Online |\(Natural\)|- .*$/g,"").trim()+" · ":"")+Math.min(i+1,Q.length)+" / "+Q.length}
+  function speak(){if(i>=Q.length){state="idle";i=0;mark(null);ui();return}const [el,tx]=Q[i];mark(el);const u=new SpeechSynthesisUtterance(tx);u.lang=voice?voice.lang:"ur-PK";if(voice)u.voice=voice;u.rate=parseFloat(rateSel.value);
+    u.onend=()=>{if(state!=="playing")return;i++;ui();speak()};u.onerror=e=>{if(e.error==="interrupted"||e.error==="canceled")return;state="idle";ui();note("Playback stopped ("+e.error+").")};S.speak(u);ui()}
+  btn.onclick=()=>{pick();if(state==="playing"){S.pause();state="paused";ui();return}if(state==="paused"){S.resume();state="playing";ui();return}
+    if(!voice)note("This device has no Urdu voice installed, so the reading may not sound right. For the best audio, open this page in Chrome on Android or in Microsoft Edge on Windows.");
+    S.cancel();state="playing";speak()};
+  stop.onclick=()=>{state="idle";S.cancel();i=0;mark(null);ui()};
+  rateSel.onchange=()=>{if(state==="playing"){S.cancel();speak()}};
+  // keep Chrome's long-speech timer alive
+  if(!/Android/i.test(navigator.userAgent))setInterval(()=>{if(state==="playing"&&S.speaking&&!S.paused){S.pause();S.resume()}},12000);
+  addEventListener("pagehide",()=>S.cancel());ui();
 })();
 </script>
 </body>
